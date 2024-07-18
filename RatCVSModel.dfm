@@ -1,7 +1,7 @@
 object Model: TModel
-  OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 150
-  Width = 215
+  Height = 188
+  Width = 269
+  PixelsPerInch = 120
 end

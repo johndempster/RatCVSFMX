@@ -4,8 +4,8 @@ object MainFrm: TMainFrm
   Caption = 
     'RatCVS V4.0.0 : Rat Cardiovascular System  (c) J. Dempster, Univ' +
     'ersity of Strathclyde (2004-2024) '
-  ClientHeight = 719
-  ClientWidth = 1181
+  ClientHeight = 720
+  ClientWidth = 1180
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -23,10 +23,10 @@ object MainFrm: TMainFrm
     Size.Height = 658.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object DisplayPage: TTabControl
+    object Z: TTabControl
       Anchors = [akLeft, akTop, akRight, akBottom]
-      Position.X = 16.000000000000000000
-      Position.Y = 16.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 13.000000000000000000
       Size.Width = 841.000000000000000000
       Size.Height = 637.000000000000000000
       Size.PlatformDefault = False
@@ -75,7 +75,7 @@ object MainFrm: TMainFrm
           ZoomDisableVertical = False
           DisableChannelVisibilityButton = False
           PrinterFontSize = 50
-          PrinterFontName = 'Arial'
+          PrinterFontName = 'Times New Roman'
           PrinterPenWidth = 5
           PrinterLeftMargin = 10.000000000000000000
           PrinterRightMargin = 10.000000000000000000
@@ -95,7 +95,7 @@ object MainFrm: TMainFrm
           FloatingPointSamples = False
           FixZeroLevels = False
           DisplaySelected = False
-          FontSize = 14
+          FontSize = 15
         end
         object TDisplayPanel: TPanel
           Anchors = [akLeft, akRight]
@@ -1640,6 +1640,7 @@ object MainFrm: TMainFrm
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           Text = 'Dose'
+          TabOrder = 2
         end
         object bAddAgonist: TButton
           Hint = 'Inject agonist into vein'
@@ -1697,6 +1698,7 @@ object MainFrm: TMainFrm
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           Text = 'Dose'
+          TabOrder = 2
         end
         object bAddAntagonist: TButton
           Hint = 'Inject drug into vein'
@@ -1717,7 +1719,7 @@ object MainFrm: TMainFrm
           item
           end>
         IsSelected = False
-        Size.Width = 80.000000000000000000
+        Size.Width = 79.000000000000000000
         Size.Height = 27.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
@@ -1745,6 +1747,7 @@ object MainFrm: TMainFrm
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           Text = 'Dose'
+          TabOrder = 2
         end
         object cbUnknownDose: TComboBox
           Hint = 'Select stock solution concentration (M)'
@@ -3582,7 +3585,7 @@ object MainFrm: TMainFrm
     Top = 624
   end
   object MenuBar1: TMenuBar
-    Size.Width = 1181.000000000000000000
+    Size.Width = 1180.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4

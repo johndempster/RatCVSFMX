@@ -81,7 +81,7 @@ type
 
   TMainFrm = class(TForm)
     DisplayGrp: TGroupBox;
-    DisplayPage: TTabControl;
+    Z: TTabControl;
     ChartTab: TTabItem;
     ExperimentTab: TTabItem;
     PithedRatSetup: TImageControl;
@@ -1061,14 +1061,14 @@ begin
       end
    else if rbRenalNerve.IsChecked then
       begin
-      // Vagus nerve
+      // Renal nerve
       Model.Drugs[Model.iRenalNerve].DoseInjected := 5.*Model.Drugs[Model.iRenalNerve].Angt1R.Potency ;
       ChartAnnotation := 'Renal Nv.';
       end
    else
       begin
-      // Sympathetic nerves (excluding adrenal)
-      Model.Drugs[Model.iVagusNerve].DoseInjected := 10.0*Model.Drugs[Model.iVagusNerve].VagChR.Potency ;
+      // Vagus nerve
+      Model.Drugs[Model.iVagusNerve].DoseInjected := 100.0*Model.Drugs[Model.iVagusNerve].VagChR.Potency ;
       ChartAnnotation := 'Vagus Nv.';
       end;
 
@@ -1473,7 +1473,7 @@ procedure TMainFrm.mnWebHelpClick(Sender: TObject);
 var
   URL: string;
 begin
-  URL := 'https://github.com/johndempster/ObSimFMX/wiki';
+  URL := 'https://github.com/johndempster/RatCVSFMX/wiki';
 {$IFDEF MSWINDOWS}
   URL := StringReplace(URL, '"', '%22', [rfReplaceAll]);
   ShellExecute(0, 'open', PChar(URL), nil, nil, SW_SHOWNORMAL);

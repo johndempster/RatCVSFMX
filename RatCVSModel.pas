@@ -761,6 +761,9 @@ begin
      Inc(iDrug) ;
      NumDrugs := iDrug ;
 
+     for iDrug := 0 to NumDrugs-1 do Drugs[iDrug].Dose := 0.0 ;
+     for iDrug := 0 to NumDrugs-1 do Drugs[iDrug].DoseInjected := 0.0 ;
+
      Heart.Elastance := 1./{75.} 30.0 ;
      Heart.Volume0 := 5. ;
      Heart.Volume := 10. ;
@@ -802,6 +805,7 @@ var
    i : Integer ;
    Num,Denom : single ;
    PotencyShift,TMid,YMax,YMin : single ;
+   AchFromVagus : Single ;
 begin
 
      if t.time >= t.next then
@@ -817,6 +821,7 @@ begin
 
         { Effects of sympathetic nerve and vagal baroreceptor feedback
           in normal UNPITHED rat }
+
         if NormalRat then
            begin
 
@@ -825,10 +830,8 @@ begin
            Drugs[iBeta1AdrNerves].Dose := Drugs[iBeta1AdrNerves].Beta1Adr.Potency*0.2 ;
 
            { ** Baroreceptor feedback loops (in normal rat only) ** }
-           Drugs[iVagusNerve].Dose := Max( Drugs[iVagusNerve].Dose,
-                                           Drugs[iVagusNerve].VagChR.Potency
-                                           * (5.0 / (1.+ exp(-(Art.MeanPressure-130.0)/8.0)))
-                                           ) ;
+           AchFromVagus := Drugs[iVagusNerve].VagChR.Potency* (5.0 / (1.+ exp(-(Art.MeanPressure-130.0)/8.0))) ;
+           Drugs[iVagusNerve].Dose := Max( Drugs[iVagusNerve].Dose,AchFromVagus) ;
 
            end ;
 
