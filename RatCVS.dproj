@@ -6,7 +6,7 @@
         <MainSource>RatCVS.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">OSX64</Platform>
         <TargetedPlatforms>4099</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -117,7 +117,7 @@
         <PF_AppleID>john.dempster0@gmail.com</PF_AppleID>
         <PF_AppSpecificPassword>853F47CC5F920785CF3CE53EA45B7BB6E45E080C7EBFECA09F08777AD849A8AEA5EB5D0A7F631C61C1BD5765FAB3C363BAB3361C04652294162B458CE5F52284C946F35DD545FA95BFA2AF3F072C1D0A92003E071DBA097BE3FD16D14425789365CA9A8422F1</PF_AppSpecificPassword>
         <PF_TeamID>5C32G7C3QT</PF_TeamID>
-<BT_BuildType>DeveloperID</BT_BuildType>
+        <BT_BuildType>DeveloperID</BT_BuildType>
         <PF_DeveloperIDCert>Developer ID Application: John Dempster (5C32G7C3QT)</PF_DeveloperIDCert>
         <PF_StapleTicket>true</PF_StapleTicket>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
@@ -141,6 +141,9 @@
         </DCCReference>
         <DCCReference Include="ModalBox.pas">
             <Form>ModalBoxFrm</Form>
+        </DCCReference>
+        <DCCReference Include="FMX.Platform.Mac.pas">
+            <Form>$ENDIF</Form>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
